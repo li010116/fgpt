@@ -325,7 +325,7 @@ export const ChatInput = ({
               }`,
             }}
             placeholder={
-              t('Type a message or type "/" to select a prompt...') || ''
+              t('Ukoliko vam je ponuđeni odgovor nedovršen onda u chat napišite "Nastavi"') || ''
             }
             value={content}
             rows={1}
