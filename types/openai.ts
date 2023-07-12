@@ -16,7 +16,7 @@ export enum OpenAIModelID {
   GPT_4_0613 = 'gpt-4-0613',
   GPT_4_32K = 'gpt-4-32k',
   GPT_4_32K_OP = 'gpt-4-32k-poe',
-  CLAUDE_PLUS = 'claude+',
+  CLAUDE_2_100K = 'claude-2-100k',
   CLAUDE_INSTANT = 'claude-instant',
   CLAUDE_INSTANT_100K = 'claude-instant-100k',
   BARD = 'bard',
@@ -74,11 +74,11 @@ export const OpenAIModels: Record<OpenAIModelID, OpenAIModel> = {
     maxLength: 96000,
     tokenLimit: 32768,
   },
-  [OpenAIModelID.CLAUDE_PLUS]: {
-    id: OpenAIModelID.CLAUDE_PLUS,
-    name: 'Claude+',
-    maxLength: 30000,
-    tokenLimit: 10240,
+  [OpenAIModelID.CLAUDE_2_100K]: {
+    id: OpenAIModelID.CLAUDE_2_100K,
+    name: 'CLAUDE_2_100K',
+    maxLength: 75000,
+    tokenLimit: 100000,
   },
   [OpenAIModelID.CLAUDE_INSTANT]: {
     id: OpenAIModelID.CLAUDE_INSTANT,
