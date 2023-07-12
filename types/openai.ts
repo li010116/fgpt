@@ -70,7 +70,7 @@ export const OpenAIModels: Record<OpenAIModelID, OpenAIModel> = {
   },
   [OpenAIModelID.GPT_4_32K_OP]: {
     id: OpenAIModelID.GPT_4_32K_OP,
-    name: 'vizcacha',
+    name: 'GPT_4_32K_OP',
     maxLength: 96000,
     tokenLimit: 32768,
   },
