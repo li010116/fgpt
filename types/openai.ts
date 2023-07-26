@@ -9,17 +9,14 @@ export interface OpenAIModel {
 
 export enum OpenAIModelID {
   GPT_3_5 = 'gpt-3.5-turbo',
-  GPT_3_5_0613 = 'gpt-3.5-turbo-0613',
   GPT_3_5_16K = 'gpt-3.5-turbo-16k',
-  GPT_3_5_16K_0613 = 'gpt-3.5-turbo-16k-0613',
   GPT_4 = 'gpt-4',
-  GPT_4_0613 = 'gpt-4-0613',
-  GPT_4_32K = 'gpt-4-32k',
-  GPT_4_32K_OP = 'gpt-4-32k-poe',
+  GPT_4_32K = 'gpt-4-32k-poe',
   CLAUDE_2_100K = 'claude-2-100k',
   CLAUDE_INSTANT = 'claude-instant',
   CLAUDE_INSTANT_100K = 'claude-instant-100k',
-  BARD = 'bard',
+  llama_2_70b_chat = 'llama-2-70b-chat',
+  Google_PaLM = 'chat-bison-001', 
 }
 
 // in case the `DEFAULT_MODEL` environment variable is not set or set to an unsupported model
@@ -32,21 +29,9 @@ export const OpenAIModels: Record<OpenAIModelID, OpenAIModel> = {
     maxLength: 12000,
     tokenLimit: 4096,
   },
-  [OpenAIModelID.GPT_3_5_0613]: {
-    id: OpenAIModelID.GPT_3_5_0613,
-    name: 'GPT-3.5-0613',
-    maxLength: 12000,
-    tokenLimit: 4096,
-  },
   [OpenAIModelID.GPT_3_5_16K]: {
     id: OpenAIModelID.GPT_3_5_16K,
     name: 'GPT-3.5-16K',
-    maxLength: 48000,
-    tokenLimit: 16384,
-  },
-  [OpenAIModelID.GPT_3_5_16K_0613]: {
-    id: OpenAIModelID.GPT_3_5_16K_0613,
-    name: 'GPT-3.5-16K-0613',
     maxLength: 48000,
     tokenLimit: 16384,
   },
@@ -56,27 +41,15 @@ export const OpenAIModels: Record<OpenAIModelID, OpenAIModel> = {
     maxLength: 24000,
     tokenLimit: 8192,
   },
-  [OpenAIModelID.GPT_4_0613]: {
-    id: OpenAIModelID.GPT_4_0613,
-    name: 'GPT-4-0613',
-    maxLength: 24000,
-    tokenLimit: 8192,
-  },
   [OpenAIModelID.GPT_4_32K]: {
     id: OpenAIModelID.GPT_4_32K,
     name: 'GPT-4-32K',
     maxLength: 96000,
     tokenLimit: 32768,
   },
-  [OpenAIModelID.GPT_4_32K_OP]: {
-    id: OpenAIModelID.GPT_4_32K_OP,
-    name: 'GPT_4_32K_OP',
-    maxLength: 96000,
-    tokenLimit: 32768,
-  },
   [OpenAIModelID.CLAUDE_2_100K]: {
     id: OpenAIModelID.CLAUDE_2_100K,
-    name: 'CLAUDE_2_100K',
+    name: 'Claude 2 100K',
     maxLength: 75000,
     tokenLimit: 100000,
   },
@@ -92,10 +65,16 @@ export const OpenAIModels: Record<OpenAIModelID, OpenAIModel> = {
     maxLength: 300000,
     tokenLimit: 102400,
   },
-  [OpenAIModelID.BARD]: {
-    id: OpenAIModelID.BARD,
-    name: 'Bard',
-    maxLength: 30000,
-    tokenLimit: 10240,
+    [OpenAIModelID.llama_2_70b_chat]: {
+    id: OpenAIModelID.llama_2_70b_chat,
+    name: 'llama-2-70b-chat',
+    maxLength: 	4096,
+    tokenLimit: 8192,
+  },
+  [OpenAIModelID.Google_PaLM]: {
+    id: OpenAIModelID.Google_PaLM,
+    name: 'Google-PaLM',
+    maxLength: 	8196,
+    tokenLimit: 10000,
   },
 };
