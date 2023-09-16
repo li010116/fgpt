@@ -410,16 +410,6 @@ export const Chat = memo(({ stopConversationRef }: Props) => {
                           })
                         }
                       />
-
-                      <TemperatureSlider
-                        label={t('Temperature')}
-                        onChangeTemperature={(temperature) =>
-                          handleUpdateConversation(selectedConversation, {
-                            key: 'temperature',
-                            value: temperature,
-                          })
-                        }
-                      />
                     </div>
                   )}
                 </div>

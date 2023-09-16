@@ -11,10 +11,12 @@ export interface OpenAIModel {
 export enum OpenAIModelID {
   GPT_3_5 = 'gpt-3.5-turbo',
   GPT_3_5_0613 = 'gpt-3.5-turbo-0613',
+  GPT_3_5_0301 = 'gpt-3.5-turbo-0301',
   GPT_3_5_16K = 'gpt-3.5-turbo-16k',
   GPT_3_5_16K_POE = 'gpt-3.5-turbo-16k-poe',
   GPT_3_5_16K_0613 = 'gpt-3.5-turbo-16k-0613',
   GPT_4_0613 = 'gpt-4-0613',
+  GPT_4_0314 = 'gpt-4-0314',
   GPT_4 = 'gpt-4',
   GPT_4_POE = 'gpt-4-poe',
   GPT_4_32K_0613 = 'gpt-4-32k-0613',
@@ -23,6 +25,7 @@ export enum OpenAIModelID {
   CLAUDE_2_100K = 'claude-2-100k',
   CLAUDE_INSTANT_100K = 'claude-instant-100k',
   CLAUDE_INSTANT = 'claude-instant',
+  LLAMA_2_70B_CHAT = 'llama-2-70b-chat',
 }
 
 // in case the `DEFAULT_MODEL` environment variable is not set or set to an unsupported model
@@ -39,6 +42,12 @@ export const OpenAIModels: Record<OpenAIModelID, OpenAIModel> = {
   [OpenAIModelID.GPT_3_5_0613]: {
     id: OpenAIModelID.GPT_3_5_0613,
     name: 'GPT-3.5-0613',
+    maxLength: 12000,
+    tokenLimit: 4096,
+  },
+  [OpenAIModelID.GPT_3_5_0301]: {
+    id: OpenAIModelID.GPT_3_5_0301,
+    name: 'GPT-3.5-0301',
     maxLength: 12000,
     tokenLimit: 4096,
   },
@@ -63,6 +72,12 @@ export const OpenAIModels: Record<OpenAIModelID, OpenAIModel> = {
   [OpenAIModelID.GPT_4_0613]: {
     id: OpenAIModelID.GPT_4_0613,
     name: 'GPT-4-0613',
+    maxLength: 24000,
+    tokenLimit: 8192,
+  },
+  [OpenAIModelID.GPT_4_0314]: {
+    id: OpenAIModelID.GPT_4_0314,
+    name: 'GPT-4-0314',
     maxLength: 24000,
     tokenLimit: 8192,
   },
@@ -113,6 +128,12 @@ export const OpenAIModels: Record<OpenAIModelID, OpenAIModel> = {
     name: 'Claude-Instant',
     maxLength: 36000,
     tokenLimit: 10240,
+  },
+  [OpenAIModelID.LLAMA_2_70B_CHAT]: {
+    id: OpenAIModelID.LLAMA_2_70B_CHAT,
+    name: 'llama-2-70b-chat',
+    maxLength: 12000,
+    tokenLimit: 4096,
   },
 };
   
